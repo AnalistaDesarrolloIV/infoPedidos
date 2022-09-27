@@ -1,9 +1,8 @@
 @extends('welcome')
 
 @section('content')
-
 <div class="row" id="cont" >
-    
+
 </div>
 @endsection
 
@@ -23,10 +22,8 @@
     function Listar(arreglo) {
         let titulos = ['Pedidos pendientes', 'Pedidos lanzados', 'Pedidos para consolidar', 'pedidos con error'];
         let colores = ['warning', 'success', 'info', 'danger'];
-        console.log(titulos);
         let cont = 0;
         for(let categorias of arreglo) {
-            console.log(categorias['NP']);
             let tit = titulos[cont];
             let col = colores[cont]
             $("#cont").append(`
@@ -43,7 +40,6 @@
     Listar(arreglo);
 
     function entrar(tipo) {
-        // console.log(tipo);
         let url ='';
         if (tipo == "Pedidos pendientes") {
             url = "{{route('pendientes')}}";
@@ -57,6 +53,7 @@
         
         $(location).attr('href', url);
     }
+
 
 </script>
 @endsection

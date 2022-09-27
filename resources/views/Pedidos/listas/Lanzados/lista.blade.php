@@ -29,7 +29,7 @@
         let arreglo = <?php echo json_encode($lanza) ?>;
         // console.log(arreglo);
     function Listar(arreglo) {
-        let cont = 0;
+        let cont = 1;
         for(let lans of arreglo) {
             $("#cont").append(`
                 <a href="#" class="list-group-item list-group-item-action" aria-current="true">

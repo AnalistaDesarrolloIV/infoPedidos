@@ -29,7 +29,6 @@
     function Listar(arreglo) {
         let titulos = ['Pedidos tipo 5', 'Pedidos tipo 6', 'Pedidos tipo 7'];
         let colores = ['success', 'info', 'secondary'];
-        console.log(titulos);
         let cont = 0;
         for(let pend of arreglo) {
             let tit = titulos[cont];
