@@ -29,11 +29,11 @@
         let arreglo = <?php echo json_encode($conso) ?>;
         // console.log(arreglo);
     function Listar(arreglo) {
-        let cont = 0;
+        let cont = 1;
         for(let cons of arreglo) {
             $("#cont").append(`
                 <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                    ${cons['NP']}
+                    ${cont}° ${cons['NP']}
                 </a>
             `);
                 cont += 1;

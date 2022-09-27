@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+Use Alert;
 
 class PedidosController extends Controller
 {
@@ -43,24 +44,47 @@ class PedidosController extends Controller
         // dd($pedido);
     }
     
+
+
+
+
     public function lanzados()
     {
-        $lanza = DB::connection('sqlsrv')->table('info_12')->get()->all();
+        $lanza = DB::connection('sqlsrv')->table('info_12')->orderBy('d')->get()->all();
         // dd($lanza);
         return view('Pedidos.listas.Lanzados.lista', compact('lanza'));
     }
+
+
+
+
     
     public function consolidar()
     {
-        $conso = DB::connection('sqlsrv')->table('info_13')->get()->all();
+        $conso = DB::connection('sqlsrv')->table('info_13')->orderBy('NP')->get()->all();
         // dd($conso);
         return view('Pedidos.listas.Consolidar.lista', compact('conso'));
     }
+
+
+
     
     public function error()
     {
-        $error = DB::connection('sqlsrv')->table('info_14')->get()->all();
+        $error = DB::connection('sqlsrv')->table('l3_expo_ordini')->where('eo_error', 1)->orderBy('eo_descr')->get()->all();
         // dd($error);
         return view('Pedidos.listas.Error.lista', compact('error'));
     }
+
+    public function BorrarError($id)
+    {
+        // dd($id);
+        $cambio = DB::connection('sqlsrv')->table('l3_expo_ordini')->where('eo_descr', $id)->update([
+            "eo_error" => 0,
+        ]);
+        Alert::success('Pedido', 'Edición pedido con error exitosa');
+        return redirect()->route('inicio');
+    }
+
+
 }

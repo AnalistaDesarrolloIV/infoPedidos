@@ -33,7 +33,7 @@
         for(let lans of arreglo) {
             $("#cont").append(`
                 <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                    ${lans['d']}
+                    ${cont}° ${lans['d']}
                 </a>
             `);
                 cont += 1;

@@ -1,9 +1,12 @@
 @extends('welcome')
 
 @section('content')
-<div class="row">
-    <div class="col-12">
+<div class="row justify-content-around my-3">
+    <div class="col-auto">
         <a class="btn btn-primary" href="{{route('inicio')}}">Volver</a>
+    </div>
+    <div class="col-auto">
+        <h3 class="text-light">Pedidos pendientes</h3>
     </div>
 </div>
 <div class="row" id="cont" >

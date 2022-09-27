@@ -30,6 +30,11 @@ Route::get('/detallePed/{id}',[PedidosController::class,'detallePed'])->name('de
 
 Route::get('/lanzados',[PedidosController::class,'lanzados'])->name('lanzados');
 Route::get('/consolidar',[PedidosController::class,'consolidar'])->name('consolidar');
+
+
+
 Route::get('/error',[PedidosController::class,'error'])->name('error');
+Route::get('/delete/{id}',[PedidosController::class,'BorrarError'])->name('delete');
+
 
 

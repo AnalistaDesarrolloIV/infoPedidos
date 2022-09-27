@@ -29,18 +29,36 @@
         let arreglo = <?php echo json_encode($error) ?>;
         // console.log(arreglo);
     function Listar(arreglo) {
-        let cont = 0;
+        let cont = 1;
         for(let er of arreglo) {
             $("#cont").append(`
-                <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                    ${er['NP']}
-                </a>
+                <button onclick="alert(${er['eo_descr']})" class="list-group-item list-group-item-action" aria-current="true">
+                    ${cont}° ${er['eo_descr']} : ${er['eo_nota2']}
+                </button>
             `);
                 cont += 1;
         }
     }
     Listar(arreglo);
+    function alert(id) {
+        Swal.fire({
+        title: '¿Seguro?',
+        text: "seguro de modificar las lineas de erros del pedido "+id,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '¡si, seguro!'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            
+            let url = "/delete/"+id;
+            
+            $(location).attr('href', url);
 
+        }
+        })
+    }
 
 
 </script>

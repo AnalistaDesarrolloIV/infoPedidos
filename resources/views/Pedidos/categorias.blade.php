@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="row" id="cont" >
+    
 </div>
 @endsection
 
@@ -29,7 +30,7 @@
             let tit = titulos[cont];
             let col = colores[cont]
             $("#cont").append(`
-                <div class="col-12 my-3 boton" onclick="entrar('${tit}')">
+                <div class="col-12 my-4 boton" onclick="entrar('${tit}')">
                     <span class=" text-light ">${tit}</span>
                     <div class="progress" style="height: 70px;">
                         <div class="progress-bar bg-${col}" role="progressbar" aria-label="Example with label" style="width: ${categorias['NP']}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">${categorias['NP']}</div>
@@ -56,7 +57,6 @@
         
         $(location).attr('href', url);
     }
-
 
 </script>
 @endsection
