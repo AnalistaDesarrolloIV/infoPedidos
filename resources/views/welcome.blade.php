@@ -19,14 +19,18 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                background-image: url("{{url('')}}/img/fondologin.jpg");
+                width: 100%;
+                height: 100%;
+                background-attachment: fixed;
             }
         </style>
         
         @yield('css')
     </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <div class="container-fluid">
+    <body class="antialiased" >
+        <div class="relative flex items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
+            <div class="container">
                 @yield('content')
             </div>
         </div>

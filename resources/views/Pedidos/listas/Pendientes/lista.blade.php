@@ -6,7 +6,7 @@
         <a class="btn btn-primary" href="{{route('pendientes')}}">Volver</a>
     </div>
     <div class="col-auto">
-        <h3 class="text-light">{{$tipo}}</h3>
+        <h3 class="texto">{{$tipo}}</h3>
     </div>
 </div>
 <div class="row" >
@@ -19,6 +19,14 @@
     <style>
         .boton{
             cursor: pointer;
+        }
+        .texto{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .opacidad{
+            background: rgba(10, 10, 10, 0.3);
+            border-radius: 10px;
         }
     </style>
 

@@ -1,24 +1,32 @@
 @extends('welcome')
 
-@section('content')
-<div class="row justify-content-around my-3">
-    <div class="col-auto">
-        <a class="btn btn-primary" href="{{route('inicio')}}">Volver</a>
+@section('content') 
+    <div class="row justify-content-around my-3">
+        <div class="col-auto">
+            <a class="btn btn-primary" href="{{route('inicio')}}">Volver</a>
+        </div>
+        <div class="col-auto">
+            <h3 class="texto">Pedidos por consolidar</h3>
+        </div>
     </div>
-    <div class="col-auto">
-        <h3 class="text-light">Pedidos por consolidar</h3>
+    <div class="row" >
+        <div class="list-group" id="cont" >
+          </div>
     </div>
-</div>
-<div class="row" >
-    <div class="list-group" id="cont" >
-      </div>
-</div>
 @endsection
 
 @section('css')
     <style>
         .boton{
             cursor: pointer;
+        }
+        .texto{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .opacidad{
+            background: rgba(10, 10, 10, 0.3);
+            border-radius: 10px;
         }
     </style>
 

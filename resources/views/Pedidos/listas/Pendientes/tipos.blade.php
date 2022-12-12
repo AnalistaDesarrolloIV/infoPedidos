@@ -6,10 +6,10 @@
         <a class="btn btn-primary" href="{{route('inicio')}}">Volver</a>
     </div>
     <div class="col-auto">
-        <h3 class="text-light">Pedidos pendientes</h3>
+        <h3 class="texto">Pedidos pendientes</h3>
     </div>
 </div>
-<div class="row" id="cont" >
+<div class="row opacidad" id="cont" >
 </div>
 @endsection
 
@@ -17,6 +17,14 @@
     <style>
         .boton{
             cursor: pointer;
+        }
+        .texto{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .opacidad{
+            background: rgba(10, 10, 10, 0.3);
+            border-radius: 10px;
         }
     </style>
 
@@ -35,7 +43,7 @@
             let col = colores[cont]
             $("#cont").append(`
                 <div class="col-12 my-3 boton" onclick="entrar('${tit}')">
-                    <span class=" text-light ">${tit}</span>
+                    <span class=" texto ">${tit}</span>
                     <div class="progress" style="height: 70px;">
                         <div class="progress-bar bg-${col}" role="progressbar" aria-label="Example with label" style="width: ${pend['NP']}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">${pend['NP']}</div>
                     </div>
