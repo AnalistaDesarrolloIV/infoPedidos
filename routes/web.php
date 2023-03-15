@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/error', function () {
+Route::get('/', function () {
     
     $invoices = DB::connection('sqlsrv')->table('info_1')->get()->all();
     // dd($invoices);
